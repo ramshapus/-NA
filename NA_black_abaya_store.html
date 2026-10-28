@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e9dfd0">
+  <title>NA | عبايات أنيقة</title>
+  <style>
+    :root{
+      --beige:#e9dfd0;--cream:#f8f4ed;--sand:#d4c2aa;--ink:#27231f;
+      --muted:#786f65;--gold:#9c7950;--line:rgba(69,55,41,.16);
+      --white:rgba(255,252,247,.78);--shadow:0 20px 55px rgba(63,48,31,.10)
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:linear-gradient(135deg,#f5eee4 0%,#e7daca 52%,#f6f0e8 100%);color:var(--ink);font-family:Tahoma,Arial,sans-serif;overflow-x:hidden}
+    body:before,body:after{content:"NA";position:fixed;z-index:-1;pointer-events:none;font-family:Georgia,serif;font-weight:700;letter-spacing:-.11em;color:rgba(255,255,255,.28);filter:blur(2px);white-space:nowrap}
+    body:before{font-size:clamp(260px,45vw,650px);top:14%;left:-5%;transform:rotate(-13deg)}
+    body:after{font-size:clamp(200px,34vw,490px);bottom:-4%;right:-5%;transform:rotate(9deg);color:rgba(143,115,82,.08)}
+    button,input,select,textarea{font:inherit}
+    button{cursor:pointer}
+    .wrap{width:min(1160px,92%);margin:auto}
+    .glass{background:rgba(255,252,247,.58);border:1px solid rgba(255,255,255,.7);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:var(--shadow)}
+    header{position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(255,255,255,.6);background:rgba(242,234,223,.76);backdrop-filter:blur(18px)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-family:Georgia,serif;direction:ltr;font-size:36px;font-weight:700;letter-spacing:-3px;color:#30261d;text-decoration:none}
+    .brand small{display:block;font:10px Tahoma,sans-serif;letter-spacing:3px;text-align:center;color:var(--gold);margin-top:-3px}
+    .navlinks{display:flex;align-items:center;gap:24px}
+    .navlinks a{color:var(--ink);text-decoration:none;font-size:13px}
+    .cart-btn,.btn{border:0;border-radius:999px;padding:12px 19px;background:#302820;color:#fff8ee;transition:.2s}
+    .cart-btn:hover,.btn:hover{transform:translateY(-2px);background:#57432f}
+    .cart-count{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 5px;margin-right:6px;border-radius:50%;background:#d7c0a0;color:#2e241a;font-size:12px}
+    .hero{min-height:450px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:34px;padding:60px 0 48px}
+    .eyebrow{color:var(--gold);font-size:12px;letter-spacing:2px;font-weight:bold}
+    h1{font-size:clamp(38px,5.2vw,68px);line-height:1.25;margin:16px 0;font-weight:500;letter-spacing:-1.5px}
+    h1 span{font-family:Georgia,serif;font-style:italic;direction:ltr;display:inline-block;color:#9c7950}
+    .hero p{color:var(--muted);line-height:2;max-width:490px;font-size:15px}
+    .hero-art{min-height:330px;border-radius:220px 220px 24px 24px;display:grid;place-items:center;position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.66),rgba(196,170,137,.34));border:1px solid rgba(255,255,255,.75)}
+    .hero-art:before{content:"NA";position:absolute;font:700 clamp(100px,17vw,210px) Georgia,serif;letter-spacing:-.12em;color:rgba(255,255,255,.36);filter:blur(1.5px);direction:ltr}
+    .art-caption{position:absolute;bottom:24px;right:25px;left:25px;text-align:center;color:#5b4a39;font-size:12px;letter-spacing:1px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:30px 0 22px}
+    .section-head h2{font-size:27px;font-weight:500;margin:0 0 8px}
+    .section-head p{margin:0;color:var(--muted);font-size:13px}
+    .product-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin-bottom:76px}
+    .product{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;border-radius:28px;overflow:hidden}
+    .product-image{min-height:390px;display:grid;place-items:center;position:relative;background:linear-gradient(150deg,#d6c4ad,#f6f0e8 55%,#c5ae92);padding:24px}
+    .product-image .watermark{position:absolute;font:700 120px Georgia,serif;color:rgba(255,255,255,.36);filter:blur(2px);letter-spacing:-12px;direction:ltr}
+    .image-placeholder{position:relative;z-index:1;width:100%;height:100%;min-height:340px;border:1px dashed rgba(84,65,45,.3);border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#6e5a45;padding:20px;background:rgba(255,255,255,.12)}
+    .image-placeholder svg{width:62px;height:62px;margin-bottom:12px;opacity:.7}
+    .image-placeholder strong{font-size:15px}
+    .image-placeholder span{font-size:12px;line-height:1.9;margin-top:8px;max-width:240px}
+    .product-info{padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;justify-content:center}
+    .sku{font-size:11px;letter-spacing:1.4px;color:var(--gold);direction:ltr;text-align:right}
+    .product-info h3{font-size:clamp(25px,3vw,36px);font-weight:500;margin:12px 0}
+    .description{color:var(--muted);line-height:2;font-size:14px;margin:0 0 18px}
+    .price{font-size:23px;font-weight:bold;margin-bottom:20px;color:#4b3927}
+    .price small{font-size:12px;font-weight:normal;color:var(--muted)}
+    .field{margin:14px 0}
+    .field label{display:block;font-size:13px;margin-bottom:9px;font-weight:bold}
+    .sizes{display:flex;gap:8px;flex-wrap:wrap}
+    .size-option{position:relative}
+    .size-option input{position:absolute;opacity:0;pointer-events:none}
+    .size-option span{display:grid;place-items:center;width:49px;height:43px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.45);direction:ltr;font-size:13px;transition:.2s}
+    .size-option input:checked+span{background:#302820;color:white;border-color:#302820}
+    .input,select,textarea{width:100%;border:1px solid var(--line);background:rgba(255,255,255,.52);border-radius:13px;padding:13px 14px;color:var(--ink);outline:none}
+    .input:focus,select:focus,textarea:focus{border-color:#9c7950;box-shadow:0 0 0 3px rgba(156,121,80,.1)}
+    textarea{resize:vertical;min-height:86px}
+    .two-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .add-cart{width:100%;margin-top:12px;padding:15px}
+    .cart-panel{border-radius:24px;padding:clamp(20px,4vw,34px);margin:0 auto 80px;max-width:850px;scroll-margin-top:100px}
+    .cart-panel h2{font-size:25px;font-weight:500;margin:0 0 8px}
+    .subtext{font-size:13px;color:var(--muted);line-height:1.9;margin:0 0 20px}
+    .empty-cart{padding:18px;border-radius:14px;border:1px dashed var(--line);color:var(--muted);font-size:13px;text-align:center;margin-bottom:20px}
+    .cart-item{display:flex;justify-content:space-between;gap:12px;align-items:center;background:rgba(255,255,255,.4);padding:14px;border-radius:14px;margin-bottom:16px}
+    .cart-item strong{display:block;margin-bottom:6px;font-size:14px}
+    .cart-item small{color:var(--muted);line-height:1.8}
+    .remove{border:1px solid var(--line);background:transparent;color:#765c42;border-radius:10px;padding:8px 11px;font-size:12px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+    .full{grid-column:1/-1}
+    .hint{font-size:11px;color:var(--muted);line-height:1.8;margin-top:7px}
+    .submit{width:100%;padding:16px;margin-top:10px;background:#3d5a42}
+    .submit:hover{background:#2d4732}
+    footer{padding:25px 0 36px;text-align:center;color:var(--muted);font-size:12px;border-top:1px solid rgba(255,255,255,.65)}
+    .toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);background:#302820;color:white;border-radius:999px;padding:12px 18px;font-size:13px;opacity:0;pointer-events:none;transition:.25s;z-index:50;max-width:90%;text-align:center}
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(max-width:760px){
+      .nav{height:68px}.navlinks{gap:12px}.navlinks a{display:none}.brand{font-size:31px}
+      .hero{grid-template-columns:1fr;padding:38px 0 30px;gap:20px}.hero-copy{text-align:center}.hero p{margin:0 auto 20px}
+      .hero-art{min-height:220px;border-radius:140px 140px 20px 20px}.art-caption{bottom:16px}
+      .product{grid-template-columns:1fr}.product-image{min-height:280px}.image-placeholder{min-height:230px}
+      .product-info{padding:24px 20px}.two-cols,.form-grid{grid-template-columns:1fr}.full{grid-column:auto}
+      .section-head h2{font-size:23px}.section-head{align-items:start;flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#" aria-label="NA home">NA<small>ABAYA ATELIER</small></a>
+    <nav class="navlinks" aria-label="التنقل">
+      <a href="#home">الرئيسية</a><a href="#collection">العبايات</a><a href="#order">إتمام الطلب</a>
+    </nav>
+    <button class="cart-btn" id="goCart">السلة <span class="cart-count" id="cartCount">0</span></button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" id="home">
+    <div class="hero-copy">
+      <div class="eyebrow">NA · ABAYA COLLECTION</div>
+      <h1>أناقة هادئة<br>وتفاصيل <span>timeless</span></h1>
+      <p>اختاري عبايتك بعناية، بتصميم أنيق يرافقك في كل يوم. تجربة تسوق بسيطة، وتفاصيل طلبك جاهزة لك في رسالة واحدة.</p>
+      <a class="btn" href="#collection" style="display:inline-block;text-decoration:none">تصفحي العباية</a>
+    </div>
+    <div class="hero-art glass" aria-label="هوية NA">
+      <div class="art-caption">NA BLACK · ELEGANCE IN EVERY DETAIL</div>
+    </div>
+  </section>
+
+  <section id="collection">
+    <div class="section-head">
+      <div><h2>اختيارات NA</h2><p>قطعة مختارة بعناية من مجموعتنا</p></div>
+      <span class="eyebrow">01 / COLLECTION</span>
+    </div>
+    <div class="product-grid">
+      <article class="product glass">
+        <div class="product-image">
+          <div class="watermark">NA</div>
+          <div class="image-placeholder">
+            <svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M23 12c2.5 4 5.5 6 9 6s6.5-2 9-6l7 7 8 10-8 5-4-5 4 23H16l4-23-4 5-8-5 8-10 7-7Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M27 19c0 4 2 6 5 6s5-2 5-6M32 25v27" stroke="currentColor" stroke-width="1.5"/></svg>
+            <strong>صورة عباية كلوش كريب ملكي</strong>
+            <span>استبدلي هذه المساحة بصورة المنتج الحقيقية عند تجهيز صور العبايات</span>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="sku">PRODUCT NO. NA-001</div>
+          <h3>عباية كلوش كريب ملكي</h3>
+          <p class="description">تصميم كلوش بانسيابية أنيقة، مناسب لإطلالة راقية وبسيطة. أضيفي وصف القماش والتفاصيل الدقيقة حسب المنتج الفعلي.</p>
+          <div class="price" id="displayPrice">السعر يُحدد <small>— أضيفي السعر قبل النشر</small></div>
+          <div class="field">
+            <label>اختاري المقاس</label>
+            <div class="sizes" role="radiogroup" aria-label="مقاس العباية">
+              <label class="size-option"><input type="radio" name="size" value="S"><span>S</span></label>
+              <label class="size-option"><input type="radio" name="size" value="M"><span>M</span></label>
+              <label class="size-option"><input type="radio" name="size" value="L"><span>L</span></label>
+              <label class="size-option"><input type="radio" name="size" value="XL"><span>XL</span></label>
+            </div>
+          </div>
+          <button class="btn add-cart" id="addToCart">أضيفي إلى السلة</button>
+          <p class="hint">اختاري المقاس ثم أضيفي المنتج إلى السلة، وبعدها أكملي بيانات التوصيل.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="cart-panel glass" id="order">
+    <h2>سلة المشتريات وإتمام الطلب</h2>
+    <p class="subtext">راجعي المنتج والمقاس، ثم أدخلي بيانات المستلمة والعنوان لتجهيز رسالة الطلب على واتساب.</p>
+    <div id="cartContents"><div class="empty-cart">سلتك فارغة حاليًا — اختاري المقاس وأضيفي العباية أولًا.</div></div>
+    <form id="orderForm">
+      <div class="form-grid">
+        <div class="field">
+          <label for="customerName">اسم العميلة *</label>
+          <input class="input" id="customerName" name="customerName" autocomplete="name" required placeholder="الاسم الكامل">
+        </div>
+        <div class="field">
+          <label for="customerPhone">رقم الجوال *</label>
+          <input class="input" id="customerPhone" name="customerPhone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="05xxxxxxxx">
+        </div>
+        <div class="field">
+          <label for="city">المدينة *</label>
+          <input class="input" id="city" name="city" required placeholder="مثال: حفر الباطن">
+        </div>
+        <div class="field">
+          <label for="district">الحي *</label>
+          <input class="input" id="district" name="district" required placeholder="اسم الحي">
+        </div>
+        <div class="field full">
+          <label for="homeDescription">وصف المنزل والعنوان *</label>
+          <textarea id="homeDescription" name="homeDescription" required placeholder="الشارع، رقم المبنى، علامة مميزة، وأي تفاصيل تساعد المندوب"></textarea>
+        </div>
+        <div class="field full">
+          <label for="notes">ملاحظات إضافية (اختياري)</label>
+          <textarea id="notes" name="notes" placeholder="أي ملاحظات على الطلب"></textarea>
+        </div>
+      </div>
+      <button class="btn submit" type="submit">إرسال الطلب عبر واتساب</button>
+      <p class="hint">قبل نشر الموقع: عدّلي رقم واتساب المتجر والسعر في إعدادات الكود أسفل الصفحة. لا يتضمن الموقع دفعًا إلكترونيًا؛ يتم إرسال تفاصيل الطلب إلى واتساب فقط.</p>
+    </form>
+  </section>
+</main>
+
+<footer><div class="wrap">NA · ABAYA ATELIER<br><span style="display:inline-block;margin-top:8px">أناقة هادئة، بتفاصيل تُشبهك</span></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+  // عدّلي هذه القيم قبل نشر الموقع:
+  const WHATSAPP_NUMBER = "9665XXXXXXXX"; // رقم المتجر مع مفتاح الدولة، بدون + أو مسافات
+  const PRODUCT_PRICE = null; // اكتبي السعر كرقم، مثال: 199
+  const PRODUCT_NAME = "عباية كلوش كريب ملكي";
+  const PRODUCT_NUMBER = "NA-001";
+
+  const cart = [];
+  const $ = (id) => document.getElementById(id);
+  const toast = (message) => {
+    $("toast").textContent = message;
+    $("toast").classList.add("show");
+    clearTimeout(window.toastTimer);
+    window.toastTimer = setTimeout(() => $("toast").classList.remove("show"), 2600);
+  };
+
+  if (Number.isFinite(PRODUCT_PRICE) && PRODUCT_PRICE >= 0) {
+    $("displayPrice").innerHTML = `${PRODUCT_PRICE.toFixed(2)} <small>ريال سعودي</small>`;
+  }
+
+  function renderCart() {
+    $("cartCount").textContent = cart.length;
+    const container = $("cartContents");
+    if (!cart.length) {
+      container.innerHTML = '<div class="empty-cart">سلتك فارغة حاليًا — اختاري المقاس وأضيفي العباية أولًا.</div>';
+      return;
+    }
+    container.innerHTML = cart.map((item, index) => `
+      <div class="cart-item">
+        <div><strong>${item.name}</strong><small>رقم المنتج: ${item.number}<br>المقاس: ${item.size}<br>السعر: ${Number.isFinite(PRODUCT_PRICE) ? PRODUCT_PRICE.toFixed(2) + " ريال" : "يُحدد من المتجر"}</small></div>
+        <button type="button" class="remove" data-remove="${index}">حذف</button>
+      </div>`).join("");
+    container.querySelectorAll("[data-remove]").forEach(button => {
+      button.addEventListener("click", () => {
+        cart.splice(Number(button.dataset.remove), 1);
+        renderCart();
+      });
+    });
+  }
+
+  $("addToCart").addEventListener("click", () => {
+    const selected = document.querySelector('input[name="size"]:checked');
+    if (!selected) { toast("اختاري المقاس أولًا"); return; }
+    cart.push({name: PRODUCT_NAME, number: PRODUCT_NUMBER, size: selected.value});
+    renderCart();
+    toast("تمت إضافة العباية إلى السلة");
+  });
+
+  $("goCart").addEventListener("click", () => $("order").scrollIntoView({behavior:"smooth"}));
+
+  $("orderForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!cart.length) { toast("أضيفي العباية إلى السلة أولًا"); $("collection").scrollIntoView({behavior:"smooth"}); return; }
+    if (WHATSAPP_NUMBER.includes("X") || WHATSAPP_NUMBER.length < 10) {
+      toast("عدّلي رقم واتساب المتجر في الكود قبل استقبال الطلبات");
+      return;
+    }
+    const name = $("customerName").value.trim();
+    const phone = $("customerPhone").value.trim();
+    const city = $("city").value.trim();
+    const district = $("district").value.trim();
+    const home = $("homeDescription").value.trim();
+    const notes = $("notes").value.trim();
+    const itemLines = cart.map((item, i) =>
+      `${i + 1}- ${item.name}\nرقم المنتج: ${item.number}\nالمقاس: ${item.size}\nالسعر: ${Number.isFinite(PRODUCT_PRICE) ? PRODUCT_PRICE.toFixed(2) + " ريال سعودي" : "يرجى تأكيد السعر"}`
+    ).join("\n\n");
+    const message = `🖤 طلب جديد من متجر NA\n\nعنوان الطلب: طلب عباية جديدة\n\nاسم العميلة: ${name}\nرقم الجوال: ${phone}\n\nتفاصيل المنتج:\n${itemLines}\n\nالمدينة: ${city}\nالحي: ${district}\nوصف المنزل والعنوان: ${home}${notes ? "\n\nملاحظات إضافية: " + notes : ""}\n\nشكرًا لاختيارك NA`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  });
+
+  renderCart();
+</script>
+</body>
+</html>
